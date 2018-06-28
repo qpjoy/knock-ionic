@@ -1,3 +1,6 @@
+http://cdn.stevemichelotti.com/code/elite-schedule-3.13.2.zip
+
+
 nvm install lts/*
 nvm alias default lts/*
 nvm ls
