@@ -1,0 +1,93 @@
+$plus_minus: #F2F2F2;
+$icon_color: rgba(123, 123, 123, 1);
+$red: #DC4A4A;
+
+counter {
+  .product_operations {
+    margin: 2rem 0;
+    height: 5rem;
+    text-align: right;
+    position: relative;
+
+    .maintain_amounts {
+      position: absolute;
+      right: 0;
+      background: $plus_minus;
+      //height: 3rem;
+      //line-height: 3rem;
+      text-align: right;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      width: 6.08rem;
+
+      &.good_units {
+        .product_amounts {
+          color: green;
+        }
+      }
+      &.bad_units {
+        .product_amounts {
+          color: $red;
+        }
+      }
+
+      .minus_product {
+        width: 1.9rem;
+        height: 2.5rem;
+        left: 0;
+        font-size: 1rem;
+        text-align: center;
+        color: #333333;
+        display: inline-block;
+        position: absolute;
+      }
+      .product_amounts {
+        display: inline-block;
+        position: absolute;
+        padding: 0;
+        height: 2.5rem;
+        width: 3rem;
+        left: 1.5rem;
+        font-size: 1.33rem;
+        border-radius: 0 !important;
+        border: none;
+        box-shadow: none;
+        background: $plus_minus;
+        font-weight: 500;
+        text-align: center;
+        color: #999999;
+        font-family: HelveticaNeue-Bold;
+        &.mask {
+          background-color: #dddddd;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          /* display: none; <- Crashes Chrome on hover */
+          -webkit-appearance: none;
+          margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+      }
+      .plus_product {
+        height: 2.5rem;
+        width: 1.9rem;
+        font-size: 1rem;
+        right: 0;
+        text-align: center;
+        font-weight: bold;
+        color: #333333;
+        display: inline-block;
+        position: absolute;
+        &::after {
+          content: none !important;
+        }
+      }
+      ion-icon {
+        cursor: pointer;
+        font-weight: 500;
+        width: 1rem;
+        text-align: center;
+        color: $icon_color;
+      }
+    }
+  }
+}

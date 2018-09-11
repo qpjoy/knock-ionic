@@ -1,0 +1,154 @@
+
+$border: #eee;
+.no_radius {
+  border-radius: 0;
+}
+
+.wrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p0m0 {
+  padding: 0;
+  margin: 0;
+}
+
+page-chatter {
+
+  .chat_panel {
+
+    .input_share {
+      .input_share_col {
+        margin: auto;
+        .chat_mind {
+          border: 1px solid $border;
+          text-indent: 1rem;
+          font-size: 2rem;
+          height: 4rem;
+          font-weight: 400;
+        }
+      }
+
+      .btn_chat_share {
+        margin-right: 0;
+        height: 4rem;
+        min-width: 100%;
+        //border-radius: 0;
+        @extend .no_radius;
+      }
+    }
+
+    .chat_seg {
+      ion-segment {
+        display: inline-block!important;
+        .segment-button {
+          display: inline!important;
+          padding-left: 0;
+          padding-right: 2rem;
+          text-align: center;
+          color: red !important;
+          text-transform: none !important;
+          font-size: 1.7rem !important;
+          font-weight: 500 !important;
+          opacity: 1 !important;
+          border: none !important;
+          max-width: 100%!important;
+          &.activated, &.segment-activated {
+            border: none;
+            //border-bottom: 2px solid red !important;
+            color: black !important;
+            background: transparent !important;
+          }
+        }
+      }
+    }
+
+    .social_card {
+      padding: 0 1rem;
+      .social_card_grid {
+        .card_head {
+          position: relative;
+          margin: 1rem 0;
+          ion-item {
+            padding: 0;
+            ion-avatar {
+              img {
+                height: 5rem;
+                width: 5rem;
+              }
+            }
+          }
+          .pub_time {
+            position: absolute;
+            top: 1.25rem;
+            right: 0;
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      .chat_content_grid {
+        .chat_content {
+          font-size: 2rem;
+          height: 6rem;
+          word-break: break-all;
+          overflow: hidden;
+        }
+
+      }
+
+      .like_comment_grid {
+        .card_tips {
+          display: inline-block;
+          padding-right: 1rem;
+          font-size: 1.5rem;
+          height: 3.5rem;
+          line-height: 3.5rem;
+        }
+
+        .col_like_comment {
+          text-align: right;
+          .like_comment {
+            padding-right: 0;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

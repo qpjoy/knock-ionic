@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-toolbar color="normal" class="top-tool">
+    <ion-buttons start class="col_route">
+      My Stores
+    </ion-buttons>
+
+    <ion-buttons end>
+      <ion-row>
+        <ion-col class="col_issue">
+          <button id="btn_issue" ion-button small [color]="'danger'" [outline]="true">
+            Add a new store
+          </button>
+        </ion-col>
+
+        <ion-col class="col_search">
+          <ion-icon id="icon_search" ios="ios-search" md="md-search"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  <ion-grid>
+    <ion-row *ngFor="let list of lists">
+      <ion-col col-4>
+        <div class="wrap-text title_danger">
+          OXXO Cadena Comercial <ion-badge class="title_badge">GOLD</ion-badge>
+        </div>
+        <p class="wrap-text">Eduardo Gonzaiez y Pichardo 900, Centro Historico Eduardo Gonzaiez y Pichardo 900,
+          Centro Historico Eduardo Gonzaiez y Pichardo 900, Centro Historico </p>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="light_black">Last order I July 15</div>
+        <p class="dark_black">$1280</p>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="light_black">Next Visit</div>
+        <p class="dark_black">July 22</p>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="light_black">Open Service Requests</div>
+        <p class="dark_black">0</p>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="light_black">Perfect store score</div>
+        <p class="dark_black">0</p>
+        <ion-icon class="icon_more" name="md-more"></ion-icon>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

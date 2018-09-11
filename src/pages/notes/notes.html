@@ -1,0 +1,501 @@
+<!--
+  Generated template for the NotesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>notes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10 class="title_comb warp-text">
+        <div class="warp-text title">
+          OXXO Cadena Comercial
+        </div>
+        <p class="warp-text desc">Eduardo Gonzaiez y Pichardo 900, Centro Historico Eduardo Gonzaiez y Pichardo 900,
+          Centro Historico Eduardo Gonzaiez y Pichardo 900, Centro Historico </p>
+      </ion-col>
+
+      <ion-col col-2 align-self-right>
+        <ion-badge class="title_badge">GOLD</ion-badge>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-8>
+        <ion-toolbar color="normal">
+        <ion-scroll scrollX="true" style="width: 100%">
+          <ion-segment style="width: 180%" [(ngModel)]="order_detail">
+          <ion-segment-button class="segment_btn" value="overview">
+            Overview
+          </ion-segment-button>
+          <ion-segment-button class="segment_btn" value="orders">
+            Orders
+          </ion-segment-button>
+          <ion-segment-button class="segment_btn" value="promotions">
+            Promotions
+          </ion-segment-button>
+
+          <ion-segment-button class="segment_btn" value="contracts">
+            Contracts
+          </ion-segment-button>
+          <ion-segment-button class="segment_btn" value="services">
+            Service Requests
+          </ion-segment-button>
+          <ion-segment-button class="segment_btn" value="notes">
+            Notes
+          </ion-segment-button>
+        </ion-segment>
+        </ion-scroll>
+        </ion-toolbar>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-row style="margin-top: 1.5rem">
+          <ion-col class="call_check font_red" col-lg-6 col-12><ion-icon name="call"></ion-icon><span style="margin-left: 0.5rem">Call Store</span></ion-col>
+          <ion-col class="call_check" col-lg-6 col-12><ion-icon name="paper-plane"></ion-icon><span style="margin-left: 0.5rem">Checked-In</span></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--<ion-toolbar color="normal">-->
+
+
+  <!--</ion-toolbar>-->
+
+  <div [ngSwitch]="order_detail">
+    <ion-list *ngSwitchCase="'overview'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Oscar</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Zoey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Otto</h2>
+      </ion-item>
+    </ion-list>
+
+    <div class="order_content" *ngSwitchCase="'orders'">
+      <div class="order_title_lg">
+        Orders
+      </div>
+
+      <div class="order_title_sm">
+        New Orders
+      </div>
+
+
+      <ion-grid class="gird_new_order">
+        <ion-row class="order_row order_title_">
+          <ion-col col-2>DATE</ion-col>
+          <ion-col col-2>TIME</ion-col>
+          <ion-col col-2>ORDER NUMBER</ion-col>
+          <ion-col col-2>ORDER VALUE</ion-col>
+          <ion-col col-2>NUMBER OF PRODUCTS</ion-col>
+          <ion-col col-2>PAYMENT METHOD</ion-col>
+        </ion-row>
+
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            -
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="order_title_sm">
+        Recent Orders
+      </div>
+
+      <ion-grid class="gird_recent_orders">
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="order_title_sm">
+        Order History
+      </div>
+
+      <ion-grid class="gird_recent_orders">
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card-
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-2>
+            July 15, 2018
+          </ion-col>
+          <ion-col col-2>
+            10:15 AM
+          </ion-col>
+          <ion-col class="order_number" col-2>
+            031234583
+          </ion-col>
+
+          <ion-col col-2>
+            $ 1,300
+          </ion-col>
+
+          <ion-col col-2>
+            430
+          </ion-col>
+
+          <ion-col col-2>
+            Credit Card
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-list *ngSwitchCase="'promotions'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Daffy</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Huey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Dewey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2>Louie</h2>
+      </ion-item>
+    </ion-list>
+
+    <div *ngSwitchCase="'contracts'">
+      contracts
+    </div>
+
+    <div *ngSwitchCase="'services'">
+      services
+    </div>
+
+    <div class="order_content" *ngSwitchCase="'notes'">
+      <div class="order_title_lg">
+        Notes
+      </div>
+
+
+      <ion-grid class="grid_notes">
+        <ion-row class="order_title_ order_row">
+          <ion-col col-9>
+            LOREM IPSUM DOLAOR SIT AMET
+          </ion-col>
+          <ion-col col-3>
+            ALIQUA
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+        <ion-row class="order_row">
+          <ion-col col-9>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+            incididunt ut labore et
+          </ion-col>
+          <ion-col col-3>
+            dolore magna aliqua
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<!--<button style="width: 5rem" (click)="increment()">Increment</button>-->
+<!--<button style="width: 5rem"  (click)="decrement()">Decrement</button>-->
+<!--{{counter}}-->
+<!--<input  style="display: inline-block;width: 5rem" type="number" [(ngModel)]="counter">-->
+
+<!--{{counterItem.goodUnits}}-->
+
+<ion-col col-4 class="product_operations p0">
+  <div class="maintain_amounts">
+    <span class="minus_product" (click)="remove(counterItem, 1)">
+    <!--<span class="minus_product">-->
+        <ion-icon name="md-remove"></ion-icon>
+    </span>
+
+    <input type="number" min="0" class="product_amounts" [(ngModel)]="counterItem.units">
+    <!--<div class="product_amounts">-->
+      <!--{{counterItem.units}}-->
+    <!--</div>-->
+
+    <span class="plus_product" (click)="add(counterItem, 1)">
+    <!--<span class="plus_product">-->
+        <ion-icon name="md-add"></ion-icon>
+    </span>
+  </div>
+</ion-col>

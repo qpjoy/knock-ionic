@@ -1,0 +1,14 @@
+page-animations {
+  .up_down {
+    position: relative;
+    ion-icon:first-child {
+      position: absolute;
+      top: -0.25rem;
+    }
+    ion-icon:last-child {
+      position: absolute;
+      top: 0.25rem;
+    }
+  }
+
+}

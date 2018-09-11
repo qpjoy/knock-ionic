@@ -1,0 +1,40 @@
+.p0 {
+  padding: 0;
+}
+
+
+page-home {
+  .title_danger {
+    @extend .p0;
+    color: #f53d3d;
+  }
+
+  .title_badge {
+    background: #ffffff;
+    border: 1px solid gold;
+    color: gold;
+    font-size: 0.75rem;
+  }
+
+  .wrap-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .light_black {
+    color: darkgray;
+    font-size: 1.25rem;
+  }
+
+  .dark_black {
+    font-weight: 600;
+    color: black;
+  }
+
+  .icon_more {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+  }
+}

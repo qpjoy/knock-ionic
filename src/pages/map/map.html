@@ -1,0 +1,704 @@
+<!--
+  Generated template for the MapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--TODO: Requests using more than 10 waypoints, or waypoint optimization, are billed at a higher rate.-->
+
+<ion-header>
+
+  <!--<ion-navbar>-->
+    <!--<ion-title>Map</ion-title>-->
+
+    <!--<ion-buttons end>-->
+      <!--<button ion-button icon-only  (click)="presentPopover($event)">-->
+        <!--<ion-icon name="more"></ion-icon>-->
+      <!--</button>-->
+
+
+      <!--&lt;!&ndash;<find-more></find-more>&ndash;&gt;-->
+    <!--</ion-buttons>-->
+
+
+  <!--</ion-navbar>-->
+
+  <gtm-header [backWord]="'Back'" [optWord]="'Submit'" [pageTitle]="'Today Route'" (goBack)="goBackHandler($event)"></gtm-header>
+
+</ion-header>
+
+<ion-content>
+
+  <!--<more-operation></more-operation>-->
+  <!--<ion-toolbar color="normal" class="top-tool">-->
+    <!--<ion-buttons start class="col_route">-->
+      <!--Today's Route-->
+    <!--</ion-buttons>-->
+
+    <!--&lt;!&ndash;<b>Start:</b>&ndash;&gt;-->
+    <!--&lt;!&ndash;<select id="start">&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="Halifax, NS">Halifax, NS</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="Boston, MA">Boston, MA</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="New York, NY">New York, NY</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="Miami, FL">Miami, FL</option>&ndash;&gt;-->
+    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+    <!--&lt;!&ndash;<b>Waypoints:</b> <br>&ndash;&gt;-->
+    <!--&lt;!&ndash;<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>&ndash;&gt;-->
+    <!--&lt;!&ndash;<select multiple id="waypoints">&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="montreal, quebec">Montreal, QBC</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="toronto, ont">Toronto, ONT</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="chicago, il">Chicago</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="winnipeg, mb">Winnipeg</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="fargo, nd">Fargo</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="calgary, ab">Calgary</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="spokane, wa">Spokane</option>&ndash;&gt;-->
+    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+    <!--&lt;!&ndash;<b>End:</b>&ndash;&gt;-->
+    <!--&lt;!&ndash;<select id="end">&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="Vancouver, BC">Vancouver, BC</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="Seattle, WA">Seattle, WA</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="San Francisco, CA">San Francisco, CA</option>&ndash;&gt;-->
+      <!--&lt;!&ndash;<option value="Los Angeles, CA">Los Angeles, CA</option>&ndash;&gt;-->
+    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+
+
+
+    <!--<ion-buttons end>-->
+      <!--<ion-row>-->
+        <!--<ion-col class="col_issue">-->
+          <!--<button id="btn_issue" ion-button small [color]="'danger'" [outline]="true">-->
+            <!--Report an issue-->
+          <!--</button>-->
+        <!--</ion-col>-->
+
+        <!--<ion-col class="col_search">-->
+          <!--<ion-icon id="icon_search" ios="ios-search" md="md-search"></ion-icon>-->
+        <!--</ion-col>-->
+      <!--</ion-row>-->
+    <!--</ion-buttons>-->
+  <!--</ion-toolbar>-->
+
+
+  <!--<my-frame></my-frame>-->
+
+  <!--<ion-list>-->
+    <!--<ion-item>-->
+      <!--<ion-label>start:</ion-label>-->
+      <!--<ion-select [(ngModel)]="start_point">-->
+        <!--<ion-option value="Halifax, NS">Halifax, NS</ion-option>-->
+        <!--<ion-option value="Boston, MA">Boston, MA</ion-option>-->
+        <!--<ion-option value="New York, NY">New York, NY</ion-option>-->
+        <!--<ion-option value="Miami, FL">Miami, FL</ion-option>-->
+      <!--</ion-select>-->
+    <!--</ion-item>-->
+
+    <!--<ion-item>-->
+      <!--<ion-label>waypoints</ion-label>-->
+      <!--<ion-select [(ngModel)]="waypoints" multiple="true" cancelText="Nah" okText="Okay!">-->
+        <!--<ion-option value="montreal, quebec">montreal, quebec</ion-option>-->
+        <!--<ion-option value="toronto, ont">toronto, ont</ion-option>-->
+        <!--<ion-option value="chicago, il">chicago, il</ion-option>-->
+        <!--<ion-option value="winnipeg, mb">winnipeg, mb</ion-option>-->
+        <!--<ion-option value="fargo, nd">fargo, nd</ion-option>-->
+        <!--<ion-option value="calgary, ab">calgary, ab</ion-option>-->
+        <!--<ion-option value="spokane, wa">spokane, wa</ion-option>-->
+      <!--</ion-select>-->
+    <!--</ion-item>-->
+
+    <!--<ion-item>-->
+      <!--<ion-label>end:</ion-label>-->
+      <!--<ion-select [(ngModel)]="end_point">-->
+        <!--<ion-option value="Vancouver, BC">Vancouver, BC</ion-option>-->
+        <!--<ion-option value="Seattle, WA">Seattle, WA</ion-option>-->
+        <!--<ion-option value="San Francisco, CA">San Francisco, CA</ion-option>-->
+        <!--<ion-option value="Los Angeles, CA">Los Angeles, CA</ion-option>-->
+      <!--</ion-select>-->
+    <!--</ion-item>-->
+
+    <!--<ion-item style="float:right;">-->
+      <!--<button ion-button outline (click)="calculateAndDisplayRoute($event)">submit</button>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+
+
+  <!--<p><a href="https://angular-maps.com/" target="_blank">Official Website</a></p>-->
+
+
+  <ion-grid class="route_grid">
+    <ion-row class="route_row">
+      <ion-col class="route_map_col" col-12 col-lg-8>
+        <!--<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">-->
+          <!--&lt;!&ndash;<agm-direction [origin]="origin" [destination]="destination" (onChange)="changeHandler($event)">&ndash;&gt;-->
+          <!--<agm-direction *ngFor="let dir of dirArr"  [origin]="dir.origin" [destination]="dir.destination" [visible]="dir.visible" [(waypoints)]="dir.waypoints" [renderOptions]="dir.renderOptions">-->
+          <!--</agm-direction>-->
+        <!--</agm-map>-->
+
+        <!--<div *ngFor="let dir of dirArr">-->
+          <!--<input type="checkbox" [id]="ddd.name" [(ngModel)]="ddd.visible">-->
+          <!--<label [for]="ddd.name">{{ ddd.name }}</label>-->
+        <!--</div>-->
+
+        <ion-fab left bottom>
+          <button ion-fab (click)="goToDirections()">
+            <ion-icon name="navigate"></ion-icon>
+          </button>
+        </ion-fab>
+
+        <!--<agm-direction [origin]="origin" [destination]="destination" (onChange)="changeHandler($event)">-->
+
+        <!--<agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination" [visible]="dir.visible" [waypoints]="dir.waypoints" [(renderOptions)]="dir.renderOptions" [markerOptions]="dir.markerOptions" [panel]="setPanel()">-->
+        <!--</agm-direction>-->
+
+        <agm-map [latitude]="51.673858" [longitude]="7.815982">
+          <agm-marker [latitude]="51.673858" [longitude]="7.815982">
+            <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+
+              <!--<ng-container *ngTemplateOutlet="loading"></ng-container>-->
+
+              <ng-template>
+              </ng-template>
+            </agm-snazzy-info-window>
+          </agm-marker>
+        </agm-map>
+
+        <!--<agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">-->
+
+          <!--&lt;!&ndash;<agm-direction *ngFor="let dir of dirArr"&ndash;&gt;-->
+                         <!--&lt;!&ndash;[origin]="dir.origin"&ndash;&gt;-->
+                         <!--&lt;!&ndash;[destination]="dir.destination"&ndash;&gt;-->
+                         <!--&lt;!&ndash;[visible]="dir.visible"&ndash;&gt;-->
+          <!--&lt;!&ndash;&gt;</agm-direction>&ndash;&gt;-->
+          <!--<agm-direction *ngFor="let dir of dirArr"-->
+                         <!--[origin]="dir.origin"-->
+                         <!--[destination]="dir.destination"-->
+                         <!--[visible]="dir.visible"-->
+                         <!--[waypoints]="dir.waypoints"-->
+                         <!--[(renderOptions)]="dir.renderOptions"-->
+                         <!--[markerOptions]="dir.markerOptions">-->
+          <!--</agm-direction>-->
+
+          <!--<agm-marker-->
+            <!--*ngFor="let m of markers; let i = index"-->
+            <!--(markerClick)="clickedMarker(m.label, i)"-->
+            <!--[latitude]="m.lat"-->
+            <!--[longitude]="m.lng"-->
+            <!--[label]="m.label"-->
+            <!--[markerDraggable]="m.draggable"-->
+            <!--(dragEnd)="markerDragEnd(m, $event)">-->
+            <!--<agm-info-window-->
+              <!--[latitude]="m.lat"-->
+              <!--[longitude]="m.lng" #AgmInfoWindow>-->
+            <!--</agm-info-window>-->
+            <!--&lt;!&ndash;[isOpen]="isInfoWindowOpen(marker.id)"&ndash;&gt;-->
+          <!--</agm-marker>-->
+        <!--</agm-map>-->
+
+        <!--[hidden]="true"-->
+        <!--<div id="mapPanel" [hidden]="true"></div>-->
+        <!--<button type="button" (click)="getDirection_A()">Direction_A</button>-->
+        <!--<button type="button" (click)="getDirection_B()">Direction_B</button>-->
+      </ion-col>
+
+      <ion-col class="route_list_col" col-12 col-lg-4>
+        <!--<ion-item-group>-->
+          <!--<ion-item-divider color="light">Waypoints:</ion-item-divider>-->
+          <!--<ion-item *ngFor="let i of waypoints">{{i}}}</ion-item>-->
+        <!--</ion-item-group>-->
+        <!--<ion-scroll scrollY="true" class="scroll_route">-->
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+              <!--<ion-col col-1>-->
+                <!--<ion-icon name="checkbox" class="icon_check"></ion-icon>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row class="title_badge_route">-->
+                  <!--<ion-col class="dark_black" col-auto>Kevin_Test_Store 2018-07-18-->
+                    <!--<ion-badge class="title_badge">GOLD</ion-badge>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3 text-right>-->
+
+                <!--&lt;!&ndash;<find-more></find-more>&ndash;&gt;-->
+                <!--<ion-icon name="ios-more" class="icon_more" col-12 text-right></ion-icon>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+            <!--<ion-row class="ion_row_2">-->
+              <!--<ion-col col-1>-->
+                <!--<div class="vertical_line"></div>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="light_black" col-auto>-->
+                    <!--Av. Aquiles Serdan 431, Nextengo, 02070 Cludad de MexICO-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="dark_black" col-12 text-right>8:30 AM</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+          <!--</ion-grid>-->
+
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+              <!--<ion-col col-1>-->
+                <!--<ion-icon name="checkbox" class="icon_check"></ion-icon>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row class="title_badge_route">-->
+                  <!--<ion-col class="dark_black" col-auto>La Fortuna</ion-col>-->
+                  <!--<ion-col col-2>-->
+                    <!--<ion-badge class="title_badge">GOLD</ion-badge>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-icon name="ios-more" class="icon_more" col-12 text-right (click)="presentPopover($event)"></ion-icon>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+            <!--<ion-row class="ion_row_2">-->
+              <!--<ion-col col-1>-->
+                <!--<div class="vertical_line"></div>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="light_black" col-auto>-->
+                    <!--Av. Aquiles Serdan 431, Nextengo, 02070 Cludad de MexICO-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="dark_black" col-12 text-right>8:30 AM</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+          <!--</ion-grid>-->
+
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+              <!--<ion-col col-1>-->
+                <!--<ion-icon name="checkbox" class="icon_check"></ion-icon>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row class="title_badge_route">-->
+                  <!--<ion-col class="dark_black" col-auto>La Fortuna</ion-col>-->
+                  <!--<ion-col col-2>-->
+                    <!--<ion-badge class="title_badge">GOLD</ion-badge>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-icon name="ios-more" class="icon_more" col-12 text-right></ion-icon>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+            <!--<ion-row class="ion_row_2">-->
+              <!--<ion-col col-1>-->
+                <!--<div class="vertical_line"></div>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="light_black" col-auto>-->
+                    <!--Av. Aquiles Serdan 431, Nextengo, 02070 Cludad de MexICO-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="dark_black" col-12 text-right>8:30 AM</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+          <!--</ion-grid>-->
+
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+              <!--<ion-col col-1>-->
+                <!--<ion-icon name="checkbox" class="icon_check"></ion-icon>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row class="title_badge_route">-->
+                  <!--<ion-col class="dark_black" col-auto>La Fortuna</ion-col>-->
+                  <!--<ion-col col-2>-->
+                    <!--<ion-badge class="title_badge">GOLD</ion-badge>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-icon name="ios-more" class="icon_more" col-12 text-right></ion-icon>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+            <!--<ion-row class="ion_row_2">-->
+              <!--<ion-col col-1>-->
+                <!--<div class="vertical_line"></div>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="light_black" col-auto>-->
+                    <!--Av. Aquiles Serdan 431, Nextengo, 02070 Cludad de MexICO-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="dark_black" col-12 text-right>8:30 AM</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+          <!--</ion-grid>-->
+
+
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+              <!--<ion-col col-1>-->
+                <!--<ion-icon name="checkbox" class="icon_check"></ion-icon>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row class="title_badge_route">-->
+                  <!--<ion-col class="dark_black" col-auto>La Fortuna</ion-col>-->
+                  <!--<ion-col col-2>-->
+                    <!--<ion-badge class="title_badge">GOLD</ion-badge>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-icon name="ios-more" class="icon_more" col-12 text-right></ion-icon>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+            <!--<ion-row class="ion_row_2">-->
+              <!--<ion-col col-1>-->
+                <!--<div class="vertical_line"></div>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="light_black" col-auto>-->
+                    <!--Av. Aquiles Serdan 431, Nextengo, 02070 Cludad de MexICO-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="dark_black" col-12 text-right>8:30 AM</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+          <!--</ion-grid>-->
+          <!--<ion-grid>-->
+            <!--<ion-row>-->
+              <!--<ion-col col-1>-->
+                <!--<ion-icon name="checkbox" class="icon_check"></ion-icon>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row class="title_badge_route">-->
+                  <!--<ion-col class="dark_black" col-auto>La Fortuna</ion-col>-->
+                  <!--<ion-col col-2>-->
+                    <!--<ion-badge class="title_badge">GOLD</ion-badge>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-icon name="ios-more" class="icon_more" col-12 text-right></ion-icon>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+            <!--<ion-row class="ion_row_2">-->
+              <!--<ion-col col-1>-->
+                <!--<div class="vertical_line"></div>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-8>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="light_black" col-auto>-->
+                    <!--Av1. Aquiles Serdan 431, Nextengo, 02070 Cludad de MexICO-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+              <!--<ion-col col-3>-->
+                <!--<ion-row>-->
+                  <!--<ion-col class="dark_black" col-12 text-right>8:30 AM</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-col>-->
+            <!--</ion-row>-->
+          <!--</ion-grid>-->
+        <!--</ion-scroll>-->
+        <!--<button type="button" (click)="ShowDirection()">Show</button>-->
+        <!--<button type="button" (click)="HideDirection(0)">Hide0</button>-->
+        <!--<button type="button" (click)="HideDirection(1)">Hide1</button>-->
+        <!--<button type="button" (click)="HideDirection(2)">Hide2</button>-->
+        <!--<button ion-button block color="danger">Block Button</button>-->
+
+        <div class="route_list_container">
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Route-Nav"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid class="route_box_gird">
+            <ion-row class="route_box_row">
+              <ion-col class="box_left" col-9>
+                <div class="box_left_check">
+                  <span class="GTM_icon_Checkbox"></span>
+                  <div class="status_bar"></div>
+                </div>
+                <div class="box_left_content">
+                  <div class="content_title">
+                    La Fortuna
+                    <div class="badage">PLATINUM</div>
+                  </div>
+
+                  <div class="content">
+                    Av. Aquiles Serdan 431, Nextengo. 02070 Cludad de Mexico.
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col class="box_right" col-3>
+                <div class="route_operation">
+                  <span class="GTM_icon_More"></span>
+                </div>
+                <div class="route_time">8:30 AM</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+        <button class="block_button" ion-button block color="danger">Block Button</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

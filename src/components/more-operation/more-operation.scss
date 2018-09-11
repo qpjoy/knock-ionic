@@ -1,0 +1,26 @@
+more-operation {
+  .dark_black {
+    font-weight: 600;
+    color: black;
+  }
+
+  .red {
+    color: #f53d3d;
+  }
+
+  .light_black {
+    color: darkgray;
+    font-size: 1.25rem;
+  }
+
+  .find_more_opration_header {
+    @extend .dark_black;
+    font-size: 1.5rem;
+  }
+
+  .find_more_opration_font {
+    //@extend .red;
+    @extend .light_black;
+    color: #f53d3d!important;
+  }
+}

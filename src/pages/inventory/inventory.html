@@ -1,0 +1,153 @@
+<!--
+  Generated template for the InventoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <gtm-header [backWord]="'Back'" [optWord]="'Submit'" [pageTitle]="'Store Details'"
+              (goBack)="goBackHandler($event)"></gtm-header>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="gray_background">
+    <ion-grid class="store_desc">
+      <ion-row>
+        <ion-col col-9 class="title_comb warp-text padding0">
+          <div class="warp-text title">
+            OXXO Cadena Comercial
+            <ion-col col-2 align-self-right>
+              <ion-badge class="title_badge">GOLD</ion-badge>
+            </ion-col>
+          </div>
+          <p class="desc">Eduardo Gonzaiez y Pichardo 900, Centro Historico Eduardo Gonzaiez y Pichardo 900,
+            Centro Historico Eduardo Gonzaiez y Pichardo 900, Centro Historico </p>
+        </ion-col>
+
+        <ion-col col-3 class="padding0">
+          <ion-row class="call_or_check">
+            <ion-col class="call_check" col-12>
+              <ion-icon name="call"></ion-icon><span style="margin-left: 1.5rem">Call Store</span></ion-col>
+            <ion-col class="call_check" col-12>
+              <!--<ion-icon name="paper-plane"></ion-icon>-->
+              <span style="margin-left: 0.5rem">Route To Store</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="title_bar p0m0">
+      <ion-row class="title_bar_row">
+        <ion-col col-12 class="p0m0">
+          <ion-toolbar class="p0m0" color="normal">
+            <ion-scroll scrollX="true" style="width: 100%">
+              <ion-segment [(ngModel)]="order_detail">
+                <ion-segment-button class="segment_btn" value="overview">
+                  Overview
+                </ion-segment-button>
+                <ion-segment-button class="segment_btn" value="notes">
+                  Notes
+                </ion-segment-button>
+                <ion-segment-button class="segment_btn" value="orders">
+                  Orders
+                </ion-segment-button>
+                <ion-segment-button class="segment_btn" value="promotions">
+                  Promotions
+                </ion-segment-button>
+
+                <ion-segment-button class="segment_btn" value="contracts">
+                  Contracts
+                </ion-segment-button>
+                <!--<ion-segment-button class="segment_btn" value="services">-->
+                <!--Service Requests-->
+                <!--</ion-segment-button>-->
+              </ion-segment>
+            </ion-scroll>
+          </ion-toolbar>
+        </ion-col>
+
+        <!--<ion-col col-4>-->
+        <!--<ion-row style="margin-top: 1.5rem">-->
+        <!--<ion-col class="call_check font_red" col-lg-6 col-12><ion-icon name="call"></ion-icon><span style="margin-left: 0.5rem">Call Store</span></ion-col>-->
+        <!--<ion-col class="call_check" col-lg-6 col-12><ion-icon name="paper-plane"></ion-icon><span style="margin-left: 0.5rem">Checked-In</span></ion-col>-->
+        <!--</ion-row>-->
+        <!--</ion-col>-->
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="check_start_buttons">
+      <ion-row>
+        <ion-col col-6 class="padding0" style="padding-right: 1rem">
+          <button ion-button icon-start>
+            Check - In
+          </button>
+        </ion-col>
+        <ion-col col-6 class="padding0" style="padding-left: 1rem">
+          <button ion-button icon-end>
+            Start Reading
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="store_overview">
+      <ion-row class="store_data">
+        <ion-col col-3 class="padding0"><div class="store_title_desc">Average drop size</div><div class="store_title_value">$850.50</div></ion-col>
+        <ion-col col-3 class="padding0"><div class="store_title_desc">Average drop size</div><div class="store_title_value">$850.50</div></ion-col>
+        <ion-col col-3 class="padding0"><div class="store_title_desc">Average drop size</div><div class="store_title_value">$850.50</div></ion-col>
+        <ion-col col-3 class="padding0"><div class="store_title_desc">Average drop size</div><div class="store_title_value">$850.50</div></ion-col>
+      </ion-row>
+
+      <ion-row class="store_chart">
+        <ion-col col-12 class="padding0">
+          <ion-segment [(ngModel)]="barChart" color="primary" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="sales_trend">
+              Sales Trend
+            </ion-segment-button>
+            <ion-segment-button value="product_distribution">
+              Product Distribution
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+
+        <ion-col col-12 class="data_chart padding0" [ngSwitch]="barChart">
+          <div *ngSwitchCase="'sales_trend'">sales_trend</div>
+          <div *ngSwitchCase="'product_distribution'">product_distribution</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="option_menus">
+      <ion-row>
+        <ion-col col-12 class="option_menu padding0">
+          <div class="flex-container space-between">
+            <div class="flex-item">Create Pre-order</div>
+            <div class="flex-item">Create Van sales</div>
+            <div class="flex-item">Deliver order</div>
+            <div class="flex-item">Share of Shelf</div>
+            <div class="flex-item">Share of Display</div>
+            <div class="flex-item">Share of Checkouts</div>
+            <div class="flex-item">Surveys</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>
+
+<ion-grid class="footer_add_products p0m0">
+  <ion-row class="footer_add_row">
+    <ion-col col-10 class="add_products">
+      + Add products
+    </ion-col>
+    <ion-col col-2 class="load_products">
+      LOAD
+    </ion-col>
+  </ion-row>
+</ion-grid>

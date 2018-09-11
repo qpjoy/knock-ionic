@@ -22,6 +22,9 @@ dist/
 node_modules/
 tmp/
 temp/
+test/
+config/
+config.xml
 hooks/
 platforms/
 plugins/

@@ -1,0 +1,191 @@
+<!--
+  Generated template for the ChatterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>chatter</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- Content -->
+  <div class="chat_panel">
+    <!-- Share Bar -->
+    <ion-grid class="input_share">
+      <ion-row>
+        <ion-col col-lg-10 col-8 class="input_share_col">
+          <ion-input class="chat_mind" placeholder="Whats on your mind"></ion-input>
+        </ion-col>
+        <ion-col col-lg-2 col-4>
+          <button ion-button large class="btn_chat_share" color="danger" item-right>SHARE</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="chat_seg">
+      <ion-row>
+        <ion-col>
+          <ion-segment [(ngModel)]="chatTab">
+            <ion-segment-button value="feeds">
+              Feeds
+            </ion-segment-button>
+            <ion-segment-button value="my_connections">
+              My Connections
+            </ion-segment-button>
+            <ion-segment-button value="my_groups">
+              My Groups
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Tabs -->
+    <div [ngSwitch]="chatTab">
+      <div *ngSwitchCase="'feeds'" class="p0m0">
+        <ion-card class="social_card">
+            <ion-grid class="social_card_grid">
+              <ion-row>
+                <ion-col col-12 class="card_head">
+                  <ion-item>
+                    <ion-avatar item-start>
+                      <img src="http://via.placeholder.com/200x200">
+                    </ion-avatar>
+                    <h2>Laura Wills</h2>
+                    <p>Agent | New York</p>
+
+                    <div class="pub_time">
+                      2 min ago
+                    </div>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <!--<ion-card-content>-->
+            <ion-grid class="chat_content_grid">
+              <ion-row>
+                <ion-col col-12 class="chat_content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <ion-grid class="like_comment_grid">
+              <ion-row>
+                <ion-col col-6>
+                  <div class="card_tips">
+                    22 Likes
+                  </div>
+
+                  <div class="card_tips">
+                    12 Comments
+                  </div>
+                </ion-col>
+
+
+                <ion-col col-6 class="col_like_comment">
+                  <button ion-button icon-start clear small class="like_comment">
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12 Likes</div>
+                  </button>
+                  <button ion-button icon-start clear small class="like_comment">
+                    <ion-icon name="text"></ion-icon>
+                    <div>4 Comments</div>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-card>
+
+        <ion-card class="social_card">
+          <ion-grid class="social_card_grid">
+            <ion-row>
+              <ion-col col-12 class="card_head">
+                <ion-item>
+                  <ion-avatar item-start>
+                    <img src="http://via.placeholder.com/200x200">
+                  </ion-avatar>
+                  <h2>Laura Wills</h2>
+                  <p>Agent | New York</p>
+
+                  <div class="pub_time">
+                    2 min ago
+                  </div>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <!--<ion-card-content>-->
+          <ion-grid class="chat_content_grid">
+            <ion-row>
+              <ion-col col-12 class="chat_content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid class="like_comment_grid">
+            <ion-row>
+              <ion-col col-6>
+                <div class="card_tips">
+                  22 Likes
+                </div>
+
+                <div class="card_tips">
+                  12 Comments
+                </div>
+              </ion-col>
+
+
+              <ion-col col-6 class="col_like_comment">
+                <button ion-button icon-start clear small class="like_comment">
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div>12 Likes</div>
+                </button>
+                <button ion-button icon-start clear small class="like_comment">
+                  <ion-icon name="text"></ion-icon>
+                  <div>4 Comments</div>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-card>
+      </div>
+
+      <div *ngSwitchCase="'my_connections'">
+          my_connections
+      </div>
+
+      <div *ngSwitchCase="'my_groups'">
+          my_groups
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

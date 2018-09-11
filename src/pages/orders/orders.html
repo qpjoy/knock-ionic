@@ -1,0 +1,595 @@
+<!--
+  Generated template for the OrdersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <gtm-header [backWord]="'Back'" [optWord]="'Submit'" [pageTitle]="'Orders'"
+              (goBack)="goBackHandler($event)"></gtm-header>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="gray_background">
+
+    <!--<div class="container p0">-->
+
+      <ion-grid class="create_order_grid" *ngIf="0">
+        <ion-grid class="search_bar_grid p0">
+          <ion-row class="search_bar_row">
+            <ion-col col-2 class="p0"></ion-col>
+            <ion-col col-8 class="search_bar p0">
+              <ion-row>
+                <ion-col col-10 class="input_area">
+                  <ion-icon name="md-search" class="search_icon"></ion-icon>
+                  <input col-10 placeholder="Search" type="text">
+                </ion-col>
+                <ion-col col-2 align-self-center class="mic_scan p0">
+                  <ion-row>
+                    <ion-col col-6 class="mic_col p0">
+                      <ion-icon name="md-mic" (click)="allInOne()"></ion-icon>
+                    </ion-col>
+                    <ion-col col-6 class="scan_col p0">
+                      <ion-icon name="md-qr-scanner" (click)="stopListening()"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+
+            </ion-col>
+            <ion-col col-2></ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="product_title_grid p0">
+          <ion-row class="product_title_row">
+            <ion-col col-8 class="p0 product_col">Product</ion-col>
+            <ion-col col-4 class="p0 title_col">Total units</ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="product_box_grid">
+          <ion-row class="product_box_row">
+            <ion-col col-8 class="product_detail_col p0">
+              <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+              <div class="product_title_quantity">
+                <div class="abs_layer">
+                  <div class="product_title">
+                    Pepsi Wild Cherry
+                  </div>
+                  <div class="product_quantity">
+                    Order quantity 0
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col col-4 class="product_operations p0">
+              123
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-grid>
+
+      <ion-grid class="return_order_grid" *ngIf="0">
+        <ion-grid class="search_bar_grid p0">
+          <ion-row class="search_bar_row">
+            <ion-col col-2 class="p0"></ion-col>
+            <ion-col col-8 class="search_bar p0">
+              <ion-row>
+                <ion-col col-10 class="input_area">
+                  <ion-icon name="md-search" class="search_icon"></ion-icon>
+                  <input col-10 placeholder="Search" type="text">
+                </ion-col>
+                <ion-col col-2 align-self-center class="mic_scan p0">
+                  <ion-row>
+                    <ion-col col-6 class="mic_col p0">
+                      <ion-icon name="md-mic"></ion-icon>
+                    </ion-col>
+                    <ion-col col-6 class="scan_col p0">
+                      <ion-icon name="md-qr-scanner"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2></ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="product_title_grid p0">
+          <ion-row class="product_title_row">
+            <ion-col col-8 class="p0 product_col">Product</ion-col>
+            <ion-col col-4 class="p0 title_col">Total units</ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-row class="return_order_row">
+          <!--*ngFor="let reItem of returnedItems;let i = index; trackBy: trackByFn"-->
+          <ion-col col-8 class="product_detail_col p0">
+            <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+            <div class="product_title_quantity">
+              <div class="abs_layer">
+                <div class="product_title">
+                  <!--{{reItem['Product_Name__c']}}-->
+                </div>
+                <div class="product_quantity">
+                  <!--${{reItem['pricebook']['Price']}}-->
+                </div>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col col-4 class="product_operations p0">
+            <!--<div class="maintain_amounts">-->
+                            <!--<span class="minus_product" (click)="remove(reItem, 1)">-->
+                                <!--<ion-icon name="md-remove"></ion-icon>-->
+                            <!--</span>-->
+              <!--<input type="number" min="0" class="product_amounts" [(ngModel)]="reItem.units" (change)="add(reItem, 0)">-->
+              <!--<span class="plus_product" (click)="add(reItem, 1)">-->
+                                <!--<ion-icon name="md-add"></ion-icon>-->
+                            <!--</span>-->
+            <!--</div>-->
+          </ion-col>
+        </ion-row>
+
+        <!--<ion-row class="summary_title hidden-xs hidden-sm hidden-md">-->
+        <!--<ion-col col-6 col-lg-6>-->
+        <!--Products-->
+        <!--</ion-col>-->
+        <!--<ion-col col-6 col-lg-2 class="total_due" style="text-align: left">-->
+        <!--Total units-->
+        <!--</ion-col>-->
+        <!--<ion-col col-3 col-lg-2 class="total_due" style="color: green;">-->
+        <!--Good units-->
+        <!--</ion-col>-->
+        <!--<ion-col col-3 col-lg-2 class="total_due" style="color: rgba(209,51,58,1);">-->
+        <!--Bad units-->
+        <!--</ion-col>-->
+        <!--</ion-row>-->
+
+        <!--<ion-row *ngIf="isDirectSale" class="return_order_row"-->
+        <!--*ngFor="let reItem of returnedItems;let i = index; trackBy: trackByFn">-->
+
+        <!--<ion-col col-6 col-lg-6 class="product_detail_col p0">-->
+        <!--<img src="http://via.placeholder.com/60x60" style="display: inline-block">-->
+        <!--<div class="product_title_quantity">-->
+        <!--<div class="abs_layer">-->
+        <!--<div class="product_title">-->
+        <!--{{reItem['Product_Name__c']}}-->
+        <!--</div>-->
+        <!--<div class="product_quantity">-->
+        <!--${{reItem['pricebook']['Price']}}-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</ion-col>-->
+
+        <!--&lt;!&ndash;<ion-col col-6 col-lg-6 class="left_col">&ndash;&gt;-->
+        <!--&lt;!&ndash;<ion-grid>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ion-row class="product_item">&ndash;&gt;-->
+        <!--&lt;!&ndash;<ion-col col-5 col-md-4 col-lg-3>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="selected_product">&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="http://via.placeholder.com/50x50" style="display: inline-block">&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-col>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<ion-col col-auto align-self-start>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div style="display: inline-block">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="order_title">{{reItem['Product_Name__c']}}</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="order_due">${{reItem['pricebook']['Price']}}</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-col>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-row>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-grid>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-col>&ndash;&gt;-->
+
+        <!--<ion-col col-6 col-lg-2 align-self-start class="hidden-xs hidden-sm hidden-md" style="top:1rem;font-size:2rem;">-->
+        <!--{{reItem['units']}}-->
+        <!--</ion-col>-->
+
+        <!--<ion-col col-3 col-lg-2 align-self-start class="product_operations">-->
+        <!--<div class="total_due hidden-lg" style="color: green;">-->
+        <!--Good units-->
+        <!--</div>-->
+
+        <!--<div class="maintain_amounts">-->
+        <!--<span class="minus_product" (click)="remove(reItem, 1, 'good')">-->
+        <!--<ion-icon name="md-remove"></ion-icon>-->
+        <!--</span>-->
+        <!--<input type="number" class="product_amounts" [(ngModel)]="reItem.goodUnits" style="color: green;" (change)="add(reItem, 0, 'good')">-->
+        <!--<span class="plus_product" (click)="add(reItem, 1, 'good')">-->
+        <!--<ion-icon name="md-add"></ion-icon>-->
+        <!--</span>-->
+        <!--</div>-->
+
+        <!--</ion-col>-->
+
+        <!--<ion-col col-3 col-lg-2 align-self-start class="right_col">-->
+        <!--<div class="total_due hidden-lg" style="color: rgba(209,51,58,1);">-->
+        <!--Bad units-->
+        <!--</div>-->
+
+        <!--<div class="maintain_amounts">-->
+        <!--<span class="minus_product" (click)="remove(reItem, 1, 'bad')">-->
+        <!--<ion-icon name="md-remove"></ion-icon>-->
+        <!--</span>-->
+        <!--<input type="number" class="product_amounts" [(ngModel)]="reItem.badUnits" style="color: rgba(209,51,58,1);" (change)="add(reItem, 0, 'bad')">-->
+        <!--<span class="plus_product" (click)="add(reItem, 1, 'bad')">-->
+        <!--<ion-icon name="md-add"></ion-icon>-->
+        <!--</span>-->
+        <!--</div>-->
+        <!--</ion-col>-->
+
+
+        <!--&lt;!&ndash;<ion-col col-8 class="product_detail_col p0">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="http://via.placeholder.com/60x60" style="display: inline-block">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="product_title_quantity">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="abs_layer">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="product_title">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{reItem['Product_Name__c']}}&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="product_quantity">&ndash;&gt;-->
+        <!--&lt;!&ndash;${{reItem['pricebook']['Price']}}&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-col>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ion-col col-4 class="product_operations p0">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="maintain_amounts">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="minus_product" (click)="remove(reItem, 1)">&ndash;&gt;-->
+        <!--&lt;!&ndash;<ion-icon name="md-remove"></ion-icon>&ndash;&gt;-->
+        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<input type="number" class="product_amounts" [(ngModel)]="reItem.units" (change)="add(reItem, 0)">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="plus_product" (click)="add(reItem, 1)">&ndash;&gt;-->
+        <!--&lt;!&ndash;<ion-icon name="md-add"></ion-icon>&ndash;&gt;-->
+        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;&lt;!&ndash;<div class="maintain_amounts">&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<span class="minus_product" (click)="remove(rawItem, 1)">&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<ion-icon name="md-remove"></ion-icon>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;</span>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<input type="number" min="0" class="product_amounts" [(ngModel)]="rawItem.units"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;(change)="add(rawItem, 0)">&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<span class="plus_product">&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<ion-icon name="md-add" (click)="add(rawItem, 1)"></ion-icon>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;</span>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;</ion-col>&ndash;&gt;-->
+        <!--</ion-row>-->
+      </ion-grid>
+
+      <ion-grid class="order_summary_grid" *ngIf="1">
+        <ion-row class="order_summary_row">
+          <ion-col class="preordered_col" col-6>
+            <ion-grid class="product_title_grid p0">
+              <ion-row class="product_title_row">
+                <ion-col col-8 class="p0 product_col">Preordered Products</ion-col>
+                <ion-col col-4 class="p0 title_col"></ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <div class="container p0">
+              <ion-grid class="product_box_grid">
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+
+
+            <ion-grid class="discount_summary_grid">
+              <ion-row class="discount">
+                <ion-item>
+                  <ion-label>Select Discount</ion-label>
+                  <ion-select [(ngModel)]="discount" (ionChange)="summary()">
+                    <ion-option *ngFor="let discount of discounts; trackBy: trackByFn" [value]="discount"> {{discount}}</ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <!--<ion-item>-->
+                <!--<ion-label>Discount</ion-label>-->
+                <!--<ion-select [(ngModel)]="discount">-->
+                <!--<ion-option value="f">Female</ion-option>-->
+                <!--<ion-option value="m">Male</ion-option>-->
+                <!--</ion-select>-->
+                <!--</ion-item>-->
+              </ion-row>
+
+              <ion-row class="due_summary">
+                <ion-col col-4 class="p0">
+                  Amounts
+                  <span class="price">${{totalPay}}</span>
+                </ion-col>
+                <ion-col col-4 class="p0">
+                  Discounts
+                  <span class="price">${{totalDiscount}}</span>
+                </ion-col>
+                <ion-col col-4 class="p0" text-right>
+                  Total due
+                  <span class="price">${{totalPay - totalDiscount}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+
+          <ion-col class="returned_col" col-6>
+            <ion-grid class="product_title_grid p0">
+              <ion-row class="product_title_row">
+                <ion-col col-8 class="p0 product_col">Returned Products</ion-col>
+                <ion-col col-4 class="p0 title_col"></ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <div class="container p0">
+              <ion-grid class="product_box_grid">
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+                <ion-row class="product_box_row">
+                  <ion-col col-8 class="product_detail_col p0">
+                    <img src="http://via.placeholder.com/60x60" style="display: inline-block">
+                    <div class="product_title_quantity">
+                      <div class="abs_layer">
+                        <div class="product_title">
+                          Pepsi Wild Cherry
+                        </div>
+                        <div class="product_quantity">
+                          Order quantity 0
+                          10 units
+                        </div>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-4 class="product_operations p0">
+                    $200
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+
+            <ion-grid class="refund_price_grid">
+              <ion-row class="due_summary">
+                <ion-col col-4 class="p0">
+                </ion-col>
+                <ion-col col-4 class="p0">
+                </ion-col>
+                <ion-col col-4 class="p0" text-right>
+                  Total refund
+                  <span class="price">$180</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    <!--</div>-->
+  </div>
+</ion-content>

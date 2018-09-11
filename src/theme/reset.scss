@@ -1,0 +1,34 @@
+$red: #DC4A4A;
+$white: #FFFFFF;
+$gold: #D49D43;
+$overview_bg: #FFFFFF;
+
+.p_lr0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.p0 {
+  padding: 0;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.p0m0 {
+  padding: 0;
+  margin: 0;
+}
+
+.wrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ion-content {
+  >.scroll-content {
+    padding: 0!important;
+  }
+}

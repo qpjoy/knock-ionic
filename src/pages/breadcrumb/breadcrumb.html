@@ -1,0 +1,276 @@
+<!--
+  Generated template for the BreadcrumbPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>breadcrumb</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid class="p0m0">
+    <ion-row class="arrow_steps">
+      <ion-col class="step current" style="margin: 0"> <span>Order Creation</span> </ion-col>
+      <ion-col class="step"> <span>Product Returns </span> </ion-col>
+      <ion-col class="step"> <span>Order Summary</span> </ion-col>
+      <ion-col class="step current"> <span>Payment Confirmation</span> </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="0" class="create_order_row">
+      <ion-col col-7 class="left_part">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12 class="list_title font_bold">
+              Order
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-scroll scrollX="false" scrollY="true" class="scroll_list_container">
+          <ion-grid class="list_grid" *ngFor="let item of [1,1,1,1,1,1,1,1,1];let i = index;">
+          <ion-row justify-content-between class="bottom_line">
+            <ion-col col-auto class="left_col">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-3>
+                    <img src="http://via.placeholder.com/50x50" style="display: inline-block">
+                  </ion-col>
+
+                  <ion-col col-auto align-self-center>
+                    <div style="display: inline-block">
+                      <div class="order_title">Sabritas Original 240g</div>
+                      <div class="order_price">$40</div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+            <ion-col col-2 align-self-center text-right class="right_col">
+              <div class="order_price">20 units</div>
+              <div class="order_price">$800</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        </ion-scroll>
+      </ion-col>
+      <ion-col col-5 class="right_part">
+        <ion-grid class="search_bar">
+          <ion-row class="right_tool">
+            <!--<ion-col col-2 align-self-center>-->
+              <!---->
+            <!--</ion-col>-->
+            <ion-col col-10 class="input_area">
+              <ion-icon name="md-search"></ion-icon>
+              <input col-10 placeholder="search product" type="text">
+            </ion-col>
+            <ion-col col-2 align-self-center>
+              <ion-icon name="md-mic" (click)="allInOne()"></ion-icon>
+
+              <ion-icon name="md-close" (click)="stopListening()"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-scroll scrollX="false" scrollY="true" class="scroll_list_container">
+          <ion-grid class="list_grid" *ngFor="let item of [1,1,1,1,1,1,1,1,1];let i = index;">
+            <ion-row justify-content-between class="bottom_line">
+              <ion-col col-9  class="left_col">
+                <ion-grid>
+                  <ion-row class="product_item">
+                    <ion-col col-3>
+                      <div class="selected_product">
+                      </div>
+                      <img src="http://via.placeholder.com/50x50" style="display: inline-block">
+                    </ion-col>
+
+                    <ion-col col-auto align-self-center>
+                      <div style="display: inline-block">
+                        <div class="order_title">Sabritas Original 240g</div>
+                        <div class="order_title">$40</div>
+                        <div>
+                          <span class="order_inventory">Store Inventory</span>
+                          <span class="order_inventory_no">8</span>
+                        </div>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+              <ion-col col-3 align-self-start class="right_col">
+                <div class="maintain_amounts">
+                  <span class="minus_product">
+                    <ion-icon name="md-remove"></ion-icon>
+                  </span>
+                  <input type="number" class="product_amounts">
+                  <span class="plus_product">
+                    <ion-icon name="md-add"></ion-icon>
+                  </span>
+                </div>
+                <div class="van_no">
+                  <span class="order_inventory">Van</span>
+                  <span class="order_inventory_no">20</span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-scroll>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="0" class="product_return_row">
+      <ion-col col-12 class="right_part">
+
+        <ion-row class="summary_title">
+          <ion-col col-6>
+            Products Summary
+          </ion-col>
+          <ion-col col-6 class="total_due">
+            Total due $2390
+          </ion-col>
+        </ion-row>
+
+        <ion-scroll scrollX="false" scrollY="true" class="scroll_list_container">
+          <ion-grid class="list_grid" *ngFor="let item of [1,1,1];let i = index;">
+            <ion-row justify-content-between class="bottom_line">
+              <ion-col col-9  class="left_col">
+                <ion-grid>
+                  <ion-row class="product_item">
+                    <ion-col col-3>
+                      <div class="selected_product">
+                      </div>
+                      <img src="http://via.placeholder.com/50x50" style="display: inline-block">
+                    </ion-col>
+
+                    <ion-col col-auto align-self-center>
+                      <div style="display: inline-block">
+                        <div class="order_title">Sabritas Original 240g</div>
+                        <div class="order_due">Total due $420</div>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+              <ion-col col-3 align-self-start class="right_col">
+                <div class="maintain_amounts">
+                  <span class="minus_product">
+                    <ion-icon name="md-remove"></ion-icon>
+                  </span>
+                  <input type="number" class="product_amounts">
+                  <span class="plus_product">
+                    <ion-icon name="md-add"></ion-icon>
+                  </span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-scroll>
+
+        <ion-row class="view_bottom_line">
+          <ion-col class="view_more">
+            View more
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="summary_title">
+          <ion-col col-6>
+            Return Summary
+          </ion-col>
+          <ion-col col-6 class="total_due">
+            Total refund $200
+          </ion-col>
+        </ion-row>
+
+        <ion-scroll scrollX="false" scrollY="true" class="scroll_list_container">
+          <ion-grid class="list_grid" *ngFor="let item of [1,1,1];let i = index;">
+            <ion-row justify-content-between class="bottom_line">
+              <ion-col col-9  class="left_col">
+                <ion-grid>
+                  <ion-row class="product_item">
+                    <ion-col col-3>
+                      <div class="selected_product">
+                      </div>
+                      <img src="http://via.placeholder.com/50x50" style="display: inline-block">
+                    </ion-col>
+
+                    <ion-col col-auto align-self-center>
+                      <div style="display: inline-block">
+                        <div class="order_title">Pepsi Wild Cherry</div>
+                        <div class="order_due">Total refund $100</div>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+              <ion-col col-3 align-self-start class="right_col">
+                <div class="maintain_amounts">
+                  <span class="minus_product">
+                    <ion-icon name="md-remove"></ion-icon>
+                  </span>
+                  <input type="number" class="product_amounts">
+                  <span class="plus_product">
+                    <ion-icon name="md-add"></ion-icon>
+                  </span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-scroll>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="0" class="payment_confirm_row">
+      <ion-col col-12 class="payment_header">
+        <ion-row>
+          <ion-col col-12 class="payment_total_due">Total due</ion-col>
+          <ion-col col-12 class="payment_amount">$2190</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col col-12 class="payment_online">
+        <ion-row>
+          <ion-col col-12 class="payment payment_online_title">Online Payment</ion-col>
+          <ion-col col-12 class="payment payment_online_item focus">Paypal</ion-col>
+          <ion-col col-12 class="payment payment_online_item">Method</ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col col-12 class="payment_offline">
+        <ion-row>
+          <ion-col col-12 class="payment payment_online_title">Online Payment</ion-col>
+          <ion-col col-12 class="payment payment_online_item">Credit Card</ion-col>
+          <ion-col col-12 class="payment payment_online_item">Visa Card</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-footer>
+    <ion-row class="bottom_pay_bar">
+      <ion-col col-12>
+        PAY
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+
+  <!--<img class="image" src="http://i.stack.imgur.com/pC1Tv.jpg" alt="" width="120" height="120">-->
+</ion-content>
+
+<ion-footer>
+  <ion-row class="bottom_bar">
+    <ion-col col-9 class="footer_analysis">
+      Save as draft
+    </ion-col>
+    <ion-col col-3 class="footer_analysis footer_continue" align-self-center>
+      <div class="action-btn font-bigger font-bold">Continue</div>
+    </ion-col>
+  </ion-row>
+</ion-footer>

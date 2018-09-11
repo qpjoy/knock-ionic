@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-list-header class="find_more_opration_header">
+    <ion-row>
+      <ion-col col-9>
+        More Options
+      </ion-col>
+      <ion-col col-3 text-right>
+        <ion-icon name="close" (click)="dismissPop()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-list-header>
+  <ion-item class="find_more_opration" (click)="callStore()">
+    <span class="find_more_opration_font">CALL STORE</span>
+  </ion-item>
+  <ion-item class="find_more_opration" (click)="routeToStore()">
+    <span class="find_more_opration_font">ROUTE TO STORE</span>
+  </ion-item>
+</ion-list>

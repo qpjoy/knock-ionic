@@ -1,0 +1,533 @@
+.p0m0 {
+  margin: 0!important;
+  padding: 0!important;
+}
+$current_step: rgba(74,74,74,1);
+$light_gray: #dddddd;
+$right_bg_color: rgba(232,232,232,1);
+$plus_minus: rgba(215,215,215,1);
+$icon_color: rgba(123,123,123,1);
+$red: rgba(209,51,58,1);
+
+$order_sum_color: rgba(139,134,124,1);
+
+page-breadcrumb {
+
+  .image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+  }
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+  background: #ffffff!important;
+  .gtm-main-container {
+    position: absolute;
+    top: 6rem;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .scroll_list_container {
+    height: calc(100vh - 50px - 6rem);
+  }
+
+  /* Breadcrups CSS */
+  .arrow_steps .step {
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+    cursor: default;
+    margin: 0 1px;
+    padding: 10px 10px 10px 30px;
+    background-color: $light_gray;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .arrow_steps .step:after,
+  .arrow_steps .step:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -16px;
+    width: 0px;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 17px solid $light_gray;
+    z-index: 2;
+    transition: border-color 0.2s ease;
+  }
+
+  .arrow_steps .step:before {
+    right: auto;
+    left: 0;
+    border-left: 17px solid #fff;
+    z-index: 0;
+  }
+
+  .arrow_steps .step:first-child:before {
+    border: none;
+  }
+
+  .arrow_steps .step:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .arrow_steps .step span {
+    position: relative;
+  }
+
+  .arrow_steps .step span:before {
+    opacity: 0;
+    content: "✔";
+    position: absolute;
+    top: -2px;
+    left: -20px;
+  }
+
+  .arrow_steps .step.done span:before {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease 0.5s;
+    -moz-transition: opacity 0.3s ease 0.5s;
+    -ms-transition: opacity 0.3s ease 0.5s;
+    transition: opacity 0.3s ease 0.5s;
+  }
+
+  .arrow_steps .step.current {
+    color: #fff;
+    background-color: $current_step;
+  }
+
+  .arrow_steps .step.current:after {
+    border-left: 17px solid $current_step;
+  }
+
+  .create_order_row {
+    .left_part {
+      .list_title {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+
+
+      .scroll_list_container {
+        height: calc(100vh - 50px - 6rem);
+        .list_grid {
+          .bottom_line {
+            border-bottom: 1px solid $light_gray;
+
+            .order_title {
+              font-size: 1.5rem;
+              font-weight: 300;
+              margin-bottom: 0.5rem;
+            }
+            .order_price {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
+          }
+        }
+
+      }
+
+    }
+    .right_part {
+      .search_bar {
+        background: $light_gray;
+        .right_tool {
+          .input_area {
+            padding:0 ;
+            margin: 0;
+            line-height: 2rem;
+            input {
+              border: none;
+              background: $light_gray!important;
+            }
+          }
+        }
+      }
+
+      .scroll_list_container {
+        height: calc(100vh - 50px - 6rem);
+        .list_grid {
+          padding: 0;
+          .bottom_line {
+            background: $right_bg_color;
+            .left_col {
+              .product_item {
+                position: relative;
+                .selected_product {
+                  position: absolute;
+                  height: calc(100% - 10px);
+                  left: -1rem;
+                  border-left: 5px solid $light_gray;
+                  z-index: 1000;
+                }
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+
+            }
+
+            .right_col {
+              position: relative;
+              padding-top: 15px;
+              text-align: right;
+
+              .maintain_amounts {
+                position: absolute;
+                right: 0;
+                background: $plus_minus;
+                height: 3rem;
+                line-height: 3rem;
+                text-align: right;
+                width: 7.5rem;
+                .minus_product {
+                  display: inline-block;
+                  //background: $plus_minus;
+                }
+                .product_amounts {
+                  display: inline-block;
+                  padding: 0;
+                  height: 2.5rem;
+                  width: 4.5rem;
+                  font-size: 2rem;
+                  border-radius: 0!important;
+                  border: none;
+                  box-shadow: none;
+                  background: $plus_minus;
+                  //color:;
+                  font-weight: 500;
+                  //border: 1px solid ;
+                  text-align: center;
+                  &::-webkit-outer-spin-button,
+                  &::-webkit-inner-spin-button {
+                    /* display: none; <- Crashes Chrome on hover */
+                    -webkit-appearance: none;
+                    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+                  }
+                }
+                .plus_product {
+                  display: inline-block;
+                  //background: $plus_minus;
+                }
+                ion-icon {
+                  cursor: pointer;
+                  font-weight: 500;
+                  width: 1rem;
+                  text-align: center;
+                  color: $icon_color;
+                  //padding: 0.1rem;
+                }
+              }
+
+              .van_no {
+                position: relative;
+                top: 3rem;
+              }
+            }
+
+            .order_title {
+              font-size: 1.5rem;
+              font-weight: 300;
+            }
+            .order_price {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
+            .order_inventory {
+              font-size: 1rem;
+              font-weight: 300;
+            }
+            .order_inventory_no {
+              font-size: 1rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product_return_row {
+    .left_part {
+      .list_title {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+
+
+      .scroll_list_container {
+        height: calc(100vh - 50px - 6rem);
+        .list_grid {
+          .bottom_line {
+            border-bottom: 1px solid $light_gray;
+
+            .order_title {
+              font-size: 1.5rem;
+              font-weight: 300;
+              margin-bottom: 0.5rem;
+            }
+            .order_price {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
+          }
+        }
+
+      }
+
+    }
+    .right_part {
+      .summary_title {
+        color: $order_sum_color;
+        font-weight: bold;
+        font-size: 1.7rem;
+        .total_due {
+          font-weight: 400;
+          color: $red;
+          text-align: right;
+        }
+      }
+
+      .scroll_list_container {
+        height: calc(50vh - 6rem);
+        .list_grid {
+          padding: 0;
+          .bottom_line {
+            background: white;
+            .left_col {
+              .product_item {
+                position: relative;
+                .selected_product {
+                  position: absolute;
+                  height: calc(100% - 10px);
+                  left: -1rem;
+                  //border-left: 5px solid $light_gray;
+                  z-index: 1000;
+                }
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+
+            }
+
+            .right_col {
+              position: relative;
+              padding-top: 15px;
+              text-align: right;
+
+              .maintain_amounts {
+                position: absolute;
+                right: 0;
+                background: $plus_minus;
+                height: 3rem;
+                line-height: 3rem;
+                text-align: right;
+                width: 7.5rem;
+                .minus_product {
+                  display: inline-block;
+                  //background: $plus_minus;
+                }
+                .product_amounts {
+                  display: inline-block;
+                  padding: 0;
+                  height: 2.5rem;
+                  width: 4.5rem;
+                  font-size: 2rem;
+                  border-radius: 0!important;
+                  border: none;
+                  box-shadow: none;
+                  background: $plus_minus;
+                  //color:;
+                  font-weight: 500;
+                  //border: 1px solid ;
+                  text-align: center;
+                  &::-webkit-outer-spin-button,
+                  &::-webkit-inner-spin-button {
+                    /* display: none; <- Crashes Chrome on hover */
+                    -webkit-appearance: none;
+                    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+                  }
+                }
+                .plus_product {
+                  display: inline-block;
+                  //background: $plus_minus;
+                }
+                ion-icon {
+                  cursor: pointer;
+                  font-weight: 500;
+                  width: 1rem;
+                  text-align: center;
+                  color: $icon_color;
+                  //padding: 0.1rem;
+                }
+              }
+
+              .van_no {
+                position: relative;
+                top: 3rem;
+              }
+            }
+
+            .order_title {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
+
+            .order_due {
+              color: $red;
+            }
+
+            .order_price {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
+            .order_inventory {
+              font-size: 1rem;
+              font-weight: 300;
+            }
+            .order_inventory_no {
+              font-size: 1rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .view_bottom_line {
+        border-bottom: 1px solid $light_gray;
+        padding: 0 0 1rem;
+        .view_more {
+          text-align: center;
+          font-weight: 400;
+          color: $order_sum_color;
+          ion-icon {
+            padding:1rem 1rem 0;
+          }
+        }
+      }
+
+    }
+  }
+
+  .payment_confirm_row {
+    background-color: $right_bg_color;
+    .payment_header {
+      background-color: white;
+      text-align: center;
+      .payment_total_due {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      .payment_amount {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $red;
+      }
+    }
+
+    .payment_online {
+      margin-top: 0.5rem;
+      background-color: white;
+      padding: 0;
+
+      .payment {
+        height: 6rem;
+        padding: 2rem 1rem 0;
+        border-bottom: 1px solid $right_bg_color;
+        //line-height: 4rem;
+        //justify-self: center!important;
+      }
+      .payment_online_title {
+        font-weight: bold;
+        color: $order_sum_color;
+        font-size: 1.5rem;
+      }
+      .payment_online_item {
+        font-weight: 400;
+        font-size: 1.5rem;
+        &.focus {
+          background-color: rgba(253,243,244,1);
+        }
+        &:focus {
+          background-color: rgba(253,243,244,1);
+        }
+      }
+    }
+
+    .payment_offline {
+      margin-top: 0.5rem;
+      background-color: white;
+
+      .payment {
+        height: 6rem;
+        padding: 2rem 1rem 0;
+        border-bottom: 1px solid $right_bg_color;
+        //line-height: 4rem;
+        //justify-self: center!important;
+      }
+      .payment_online_title {
+        font-weight: bold;
+        color: $order_sum_color;
+        font-size: 1.5rem;
+      }
+      .payment_online_item {
+        font-weight: 400;
+        font-size: 1.5rem;
+        &.focus {
+          background-color: rgba(253,243,244,1);
+        }
+        &:focus {
+          background-color: rgba(253,243,244,1);
+        }
+      }
+    }
+  }
+
+  ion-footer {
+
+    .bottom_pay_bar {
+      height: 4rem;
+      text-align: center;
+      background-color: $red;
+      padding: .5rem 0;
+      color: white;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .bottom_bar {
+      text-indent: 0.5rem;
+      color: $red;
+      border-top: 1px solid $right_bg_color;
+
+      .footer_continue {
+        background-color: $red;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+
+  }
+
+}
